@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Factura SMART</title>
+</head>
+
+<body >
+    <div class="container-fluid" style="margin-top: 2rem; position: relative;">        
+        {{fondomarca}}
+        <!--AREA DE LOGO, RAZON SOCIAL Y NUMERO DE FACTURA -->
+        <div style="width: 100%; border-bottom: 2px solid #65778D;padding-bottom: 10px;">          
+            <table style="width: 100%;">                  
+                <tr>
+                    <td>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="width: 70%;">
+                                    <div style="padding: 5px 0px; width: fit-content;font-weight: bolder;text-align: left;">{{razonsocial}}</div>
+                                </td>
+                                <td class="celdaCurvaGris" style="width: 30%;">
+                                    <div class="fondoCurvaGris">{{tipodocumento}}: <span class="textorojo text-center">{{numerointerno}}</span></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>                    
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width: 100%;"> 
+                            <tr>
+                                <td style="padding-right: 11px;">
+                                    <img class="img-fluid" src="{{logo}}" alt="Logotipo" width="100" >
+                                </td>
+                                <td>
+                                    <div class="tarjetaEmisores">
+                                        <div style="font-size: 9px;">{{direccion}}</div>
+                                        <div style="font-size: 9px;">{{rif}}</div>
+                                        <div style="font-size: 9px;">{{telefono}}</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <table style="width: 95%; margin-left: 10px;">
+                                        <tr>
+                                            <td class="text-right" style="font-size: 10px;font-weight: bolder;width: 50%;">N° de Control</td>
+                                            <td class="text-right" style="font-size: 12px;width: 48%;">{{numerodocumento}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right" style="font-size: 10px;font-weight: bolder;">Fecha de emisión</td>
+                                            <td class="text-right" style="font-size: 9px;">{{fecha}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right" style="font-size: 10px;font-weight: bolder;">Hora de emisión</td>
+                                            <td class="text-right" style="font-size: 9px;">{{hora}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right" style="font-size: 10px;font-weight: bolder; padding-bottom: 5px;">Fecha de asignación</td>
+                                            <td class="text-right" style="font-size: 9px; padding-bottom: 5px;">{{fechaasignacion}}</td>
+                                        </tr>
+                                        {{afectado}}
+                                    </table>   
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>                       
+        </div>
+        <!--AREA DE CLIENTE CONSUMIDOR Y CODE QR -->
+        <div style="margin-top: 10px;border-bottom: 2px solid #65778D;">
+            <table style="width: 100%;margin-left: 20px;margin-bottom: 10px;">
+                <tr>
+                    <td class="text-left" style="font-size: 10px;font-weight: bolder;width: 110px;">Cliente</td>
+                    <td class="text-left" style="font-size: 10px;font-weight: bolder;width: 180px;">Correo</td>
+                    <td class="text-left" style="font-size: 10px;font-weight: bolder;width: 100px;">Teléfono</td>
+                    <td rowspan="4" class="text-center" style="font-size: 12px;font-weight: bolder;">
+                        <img class="img-fluid" src="{{codeqr}}" alt="Code QR" width="70" >
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="font-size: 9px;vertical-align: baseline;">{{nombrecliente}}</td>
+                    <td class="text-left" style="font-size: 9px;vertical-align: baseline;">{{emailcliente}}</td>
+                    <td class="text-left" style="font-size: 9px;vertical-align: baseline;">{{telefonocliente}}5-1</td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="font-size: 10px;font-weight: bolder;">Documento</td>
+                    <td class="text-left" style="font-size: 10px;font-weight: bolder;">Dirección</td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="vertical-align: baseline;font-size: 9px;">{{tipocedula}}: {{cedulacliente}}</td>
+                    <td colspan="2" class="text-left" style="vertical-align: baseline;font-size: 9px;">{{direccioncliente}}</td>
+                </tr>
+            </table>  
+        </div>
+        <!--AREA DE DETALLES PROPDUCTOS -->
+        <div class="row" style="margin-left: 5px; margin-right: 5px;">
+            <table class="{{csstabla}}">
+                <thead>
+                    <tr class="fondoGris">
+                        <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 14%;border-bottom: 2px solid #65778D;">Cod. Operación</th>
+                        <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 32%;border-bottom: 2px solid #65778D;">Descripción</th>
+                        <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 10%;border-bottom: 2px solid #65778D;">Cantidad</th>
+                        <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 12%;border-bottom: 2px solid #65778D;">P. Unit.</th>
+                        <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 8%;border-bottom: 2px solid #65778D;">% Imp.</th>
+                        <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 12%;border-bottom: 2px solid #65778D;">Monto Desc.</th>
+                        <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 10%;border-bottom: 2px solid #65778D;">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{tablaProductos}}
+                </tbody>
+            </table>
+            <!--AREA DE SUBTOTALES, COLETILLAS Y PUBLICIDAD -->
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 50%;vertical-align: baseline;">
+                        <p style="font-size: 8px; font-weight: 700;">Formas de pago:<p>
+                        <p style="font-size: 8px; font-weight: 700; padding-left: 20px;">
+                            {{formasdepago}}
+                        <p>
+                    </td>
+                    <td style="width: 50%;">
+                        <table style="width: 100%;margin-top: 5px;">
+                            <tr>
+                                <td class="text-right" style="font-size: 8px;">Subtotal Bs.:</td>
+                                <td class="text-right" style="font-size: 8px;">{{subtotal}}</td>
+                            </tr>
+                            <!-- <tr>
+                                <td class=" text-right" style="font-size: 8px;">Impuestos Bs.:</td>
+                                <td class="text-right" style="font-size: 8px;">{{impuestos}}</td>
+                            </tr>-->
+                            {{trbaseg}}
+                            {{trbaser}}
+                            {{trbasea}}
+                            {{trbaseigtf}}
+                            <!-- <tr>
+                                <td class=" text-right" style="font-size: 8px;">IGTF 3%(425,45) Bs.:</td>
+                                <td class="text-right" style="font-size: 8px;">125,45</td>
+                            </tr> -->
+                            <tr>
+                                <td class="text-right" style="font-size: 8px;">Exento Bs.:</td>
+                                <td class="text-right" style="font-size: 8px;">{{exentos}}</td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td class="text-right" style="font-size: 8px;">Total Bs.:</td>
+                                <td class="text-right" style="font-size: 8px;">{{total}}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {{creditofiscal}}
+                <tr>
+                    <td colspan="2" style="padding-top:5px;">
+                        <p style="font-size: 6px;font-family:'Calibri'; text-align: center;">{{coletilla}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center" style="padding-left:20px;padding-right:20px;padding-top:5px;">
+                        <p style="font-size: 6px;font-family:'Calibri'">{{piedepagina}}<br><span class="textorojo">ORIGINAL</span></p>
+                    </td>
+                </tr>
+                {{publicidad}}
+            </table>
+        </
+        div>
+    </div>
+</body>
+
+</html>
+<style>
+    .textorojo {
+        color: #e40a0a !important;
+        font-weight: 700 !important;
+        font-size: 10px !important;
+    }
+    .fondoGris {
+        background: #ECF6FF !important;
+    }
+    .fondoCurvaGris {
+        background: #ECF6FF !important;
+        border-top-left-radius: 15px !important; 
+        border-bottom-left-radius: 15px !important; 
+        padding: 5px 10px !important; 
+        font-size: 10px !important;
+    }
+    .tarjetaEmisores {
+        background: #ECF6FF !important;
+        color: #65778D !important;
+        border-radius: 8px !important;
+        display: grid !important;
+        padding: 10px !important;
+        width: 200px;
+    }
+    .celdaCurvaGris {
+        display: flex !important; 
+        justify-content: right !important;
+    }
+    .sinpublicidad {
+        width: 100% !important;
+        height: 350px !important;
+    }
+    .conpublicidad {
+        width: 100% !important;
+        height: 240px !important;
+    }
+    .afectado {
+        padding: 3px 0px !important;
+        background: #ECF6FF !important;
+        color: #65778D !important;
+    }    
+</style>

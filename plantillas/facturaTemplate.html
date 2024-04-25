@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Factura SMART</title>
+</head>
+
+<body>
+    <div class="container-fluid fondoanulado" style="margin-top: 2rem; position: relative;">        
+        <img src="../controllers/images/borrador.png" style="position: absolute;
+            left:0;
+            top:0;
+            z-index:-10;
+            width: 100%;    
+            height: 100%;
+        "/> 
+        <div style="width: 100%; border-bottom: 2px solid #65778D;padding-bottom: 10px;">          
+            <table style="width: 100%;">                  
+                <tr>
+                    <td rowspan="3" style="width: 130px;">
+                        <img class="img-fluid" src="../controllers/images/J-12345678-9.png" alt="Logotipo" width="120" >
+                    </td>
+                    <td style="width: 180px;">
+                        <div style="padding: 5px 0px; width: fit-content;font-weight: bolder;text-align: left;">Empresa DEMO CA</div>
+                    </td>
+                    <td style="display: flex; justify-content: right;">
+                        <div style="background: #ddd;border-top-left-radius: 15px; border-bottom-left-radius: 15px; padding: 5px 15px; width: fit-content">Factura: <span class="textorojo text-center">00000012</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="display: grid; background: #ddd; padding: 10px; ">
+                        <span style="font-size: 9px;">Don Rómulo Gallegos Calle 24 casa 183, Cumaná Estado Sucre, Venezuela </span>
+                        <span style="font-size: 9px;">J-12345678-9</span>
+                        <span style="font-size: 9px;">+58 0412.834.22.74</span>
+                        <span style="font-size: 9px;">correo@mail.com</span>
+                    </td>
+                    <td>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td class="text-right" style="font-size: 11px;font-weight: bolder;">Fecha de emisión</td>
+                                <td class="text-right" style="font-size: 11px;font-weight: bolder;">N° de Control</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right" style="font-size: 9px;">22/01/2024</td>
+                                <td class="text-right" style="font-size: 9px;">00-00000045</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right" style="font-size: 11px;font-weight: bolder;">Hora de emisión</td>
+                                <td class="text-right" style="font-size: 11px;font-weight: bolder;">Fecha de asignación</td>
+                            </tr>
+                            <tr>
+                                <td class="text-right" style="font-size: 9px;">08:45:24 am</td>
+                                <td class="text-right" style="font-size: 9px;">22/01/2024</td>
+                            </tr>
+                        </table>  
+                    </td>
+                </tr>
+            </table>                       
+        </div>
+        <div style="margin-top: 10px;border-bottom: 2px solid #65778D;">
+            <table style="width: 100%;margin-left: 20px;margin-bottom: 10px;">
+                <tr>
+                    <td class="text-left" style="font-size: 11px;font-weight: bolder;width: 110px;">Cliente</td>
+                    <td class="text-left" style="font-size: 11px;font-weight: bolder;width: 180px;">Correo</td>
+                    <td class="text-left" style="font-size: 11px;font-weight: bolder;width: 100px;">Teléfono</td>
+                    <td rowspan="4" class="text-center" style="font-size: 12px;font-weight: bolder;">
+                        <img class="img-fluid" src="../controllers/images/codeqrsmart.png" alt="Logotipo" width="70" >
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="font-size: 9px;vertical-align: baseline;">Jesús Rojas</td>
+                    <td class="text-left" style="font-size: 9px;vertical-align: baseline;">correo@mail.com</td>
+                    <td class="text-left" style="font-size: 9px;vertical-align: baseline;">+58 412558866</td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="font-size: 11px;font-weight: bolder;">Documento</td>
+                    <td class="text-left" style="font-size: 11px;font-weight: bolder;">Dirección</td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="vertical-align: baseline;font-size: 9px;">CI: 11222333</td>
+                    <td colspan="2" class="text-left" style="vertical-align: baseline;font-size: 9px;">Don Rómulo Gallegos Calle 24 casa 183, Cumaná Estado Sucre, Venezuela</td>
+                </tr>
+            </table>  
+        </div>
+        <table style="width: 100%;height: 200px">
+            <thead>
+                <tr style="background: #ddd;">
+                    <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 14%;border-bottom: 2px solid #65778D;">Cod. Operación</th>
+                    <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 32%;border-bottom: 2px solid #65778D;">Descripción</th>
+                    <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 10%;border-bottom: 2px solid #65778D;">Cantidad</th>
+                    <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 12%;border-bottom: 2px solid #65778D;">P. Unit.</th>
+                    <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 8%;border-bottom: 2px solid #65778D;">% Imp.</th>
+                    <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 12%;border-bottom: 2px solid #65778D;">Monto Desc.</th>
+                    <th class="text-center" style="padding: 3px; font-weight: 700;font-size: 8px;width: 10%;border-bottom: 2px solid #65778D;">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="height: 25px;">
+                    <td style="vertical-align: baseline;font-size: 8px;padding: 3px;">1425</td>
+                    <td style="vertical-align: baseline;font-size: 8px;border-left: 1px dashed;padding: 3px;">Documento de integración digital</td>
+                    <td class="text-center" style="vertical-align: baseline;border-left: 1px dashed;padding: 3px;font-size: 8px;">2</td>
+                    <td class="text-right" style="vertical-align: baseline;border-left: 1px dashed;padding: 3px;font-size: 8px;">Bs 123,25</td>
+                    <td class="text-center" style="vertical-align: baseline;border-left: 1px dashed;padding: 3px;font-size: 8px;">16</td>
+                    <td class="text-right" style="vertical-align: baseline;border-left: 1px dashed;padding: 3px;font-size: 8px;">Bs 123,25</td>
+                    <td class="text-right" style="vertical-align: baseline;border-left: 1px dashed;padding: 3px;font-size: 8px;">Bs 123,25</td>
+                </tr>
+                <tr style="height: 25px;">
+                    <td style="vertical-align: baseline;font-size: 8px;padding: 3px;">1425</td>
+                    <td style="vertical-align: baseline;font-size: 8px;border-left: 1px dashed;padding: 3px;">Documento de integración digital</td>
+                    <td class="text-center" style="vertical-align: baseline;border-left: 1px dashed;padding: 3px;font-size: 8px;">2</td>
+                    <td class="text-right" style="vertical-align: baseline;border-left: 1px dashed;padding: 3px;font-size: 8px;">Bs 123,25</td>
+                    <td class="text-center" style="vertical-align: baseline;border-left: 1px dashed;padding: 3px;font-size: 8px;">16</td>
+                    <td class="text-right" style="vertical-align: baseline;border-left: 1px dashed;padding: 3px;font-size: 8px;">Bs 123,25</td>
+                    <td class="text-right" style="vertical-align: baseline;border-left: 1px dashed;padding: 3px;font-size: 8px;">Bs 123,25</td>
+                </tr>
+                <tr style="height: auto;">
+                    <td style="border-bottom: 2px solid #65778D;font-size: 8px;line-height: 1;">&nbsp;</td>
+                    <td style="border-bottom: 2px solid #65778D;border-left: 1px dashed;font-size: 8px;line-height: 1;">&nbsp;</td>
+                    <td style="border-bottom: 2px solid #65778D;border-left: 1px dashed;font-size: 8px;line-height: 1;">&nbsp;</td>
+                    <td style="border-bottom: 2px solid #65778D;border-left: 1px dashed;font-size: 8px;line-height: 1;">&nbsp;</td>
+                    <td style="border-bottom: 2px solid #65778D;border-left: 1px dashed;font-size: 8px;line-height: 1;">&nbsp;</td>
+                    <td style="border-bottom: 2px solid #65778D;border-left: 1px dashed;font-size: 8px;line-height: 1;">&nbsp;</td>
+                    <td style="border-bottom: 2px solid #65778D;border-left: 1px dashed;font-size: 8px;line-height: 1;">&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 50%;vertical-align: baseline;">
+                    <p style="font-size: 8px; font-weight: 700;">Formas de pago:<p>
+                    <p style="font-size: 8px; font-weight: 700; padding-left: 20px;">
+                        Efectivo<br>Transferencia<br>
+                    <p>
+                </td>
+                <td style="width: 50%;">
+                    <table style="width: 100%;margin-top: 5px;">
+                        <tr>
+                            <td class="text-right" style="font-size: 8px;">Subtotal Bs.:</td>
+                            <td class="text-right" style="font-size: 8px;">125,45</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-right" style="font-size: 8px;">Impuestos Bs.:</td>
+                            <td class="text-right" style="font-size: 8px;">125,45</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-right" style="font-size: 8px;">IGTF 3%(425,45) Bs.:</td>
+                            <td class="text-right" style="font-size: 8px;">125,45</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right" style="font-size: 8px;">Exento Bs.:</td>
+                            <td class="text-right" style="font-size: 8px;">125,45</td>
+                        </tr>
+                        <tr style="height: 30px;">
+                            <td class="text-right" style="font-size: 8px;">Total Bs.:</td>
+                            <td class="text-right" style="font-size: 8px;">125,45</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding-top:5px;">
+                    <p style="font-size: 8px;font-family:'Calibri'; text-align: center;">En caso de Factura emitida en divisas según articulo Nro. 25 del Decreto con rango valor y fuerza de ley que establece el IVA modificado en GACETA OFICIAL Nro. 6152 de fecha 18/11/2014. Artículo 25: "En los casos en que la base imponible de la venta o prestación de servicios estuviese expresada en moneda extranjera se establecerá la equivalencia en moneda nacional al tipo de cambio corriente en el mercado del día en que ocurra el hecho imponible salvo que este ocurra en un día no hábil para el sector financiero en cuyo caso se aplicará el vigente en el día hábil inmediatamente siguiente el de la operación."</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="text-center" style="padding-left:20px;padding-right:20px;padding-top:5px;">
+                    <p style="font-size: 8px;font-family:'Calibri'">Este documento se emite bajo la providencia administrativa Nro. SNAT/2014/0032 de fecha 31/07/2014. Imprenta SMART INNOVACIONES TECNOLOGICAS, C.A. RIF J-50375790-6, Autorizada según Providencia Administrativa Nro. SENIAT/INTI/011 de fecha 10/11/2023. Desde Nro. de Control 00-00000001 Hasta Nro. 00-00010000 de fecha 31/01/2024.<br><span class="textorojo">ORIGINAL</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="text-center" style="padding-top:5px;">
+                    <img class="img-fluid" src="../controllers/images/publicidad.png" alt="Logotipo" width="100%" >
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
+
+<style>
+    .textorojo {
+        color: #e40a0a !important;
+        font-weight: 700;
+    }
+</style>

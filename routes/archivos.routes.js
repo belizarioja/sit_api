@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const archivos_controller_1 = require("../controllers/archivos.controller");
+const router = (0, express_1.Router)();
+router.route('/:rif/:anniomes/:rifid').get(archivos_controller_1.getFactura);
+router.route('/exportarlote').post(archivos_controller_1.exportFacturas);
+router.route('/redistribuir').post(archivos_controller_1.redistribuir);
+router.route('/utils/:img').get(archivos_controller_1.getUtils);
+exports.default = router;
